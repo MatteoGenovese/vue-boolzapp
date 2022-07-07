@@ -20,25 +20,24 @@
     <div class="container">
         <div id="app">
             <div class="row d-flex justify-content-between">
-                <div class="col-12 bg-light text-dark" id="left-container">
+                <div class="col-12 bg-color" id="left-container">
                     <div class="row">
-                        <div class="col-4 bg-primary">
+                        <div class="col-4">
 
 
 
-                            <div class="row d-flex justify-content-between h60px " id="user">
-                                <div class="col-2 d-flex align-items-center " id="main-user">
+                            <div class="d-flex justify-content-between align-items-center h60px " id="user">
+                                <div id="main-user">
                                     <img src="./img/avatar_1.jpg" alt="Sofia" id="main-avatar">
-                                    <span>Sofia</span>
+
                                 </div>
-                                <div class="col-7 d-flex align-items-center"> </div>
-                                <div class="col-3 d-flex align-items-center">
-                                    <div class="row d-flex align-items-center">
-                                        <div class="col-4"><i class="fa-solid fa-circle-notch"></i></div>
-                                        <div class="col-4"><i class="fa-solid fa-message"></i></div>
-                                        <div class="col-4"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-                                    </div>
-                                </div>
+                                <span class="flex-grow-1">Sofia</span>
+
+
+                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-circle-notch"></i></div>
+                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-message"></i></div>
+                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+
                             </div>
 
 
@@ -64,18 +63,23 @@
                             </div>
 
 
-                            <div class="row d-flex justify-content-between h70px" v-for="(contact,index) in contacts">
-                                <div class="col-2 d-flex align-items-center">
-                                    <img :src="getImgUrl(index)" class="w-80 sent-message-avatar" alt="getName(index)">
+                            <div class="d-flex justify-content-between h70px contact-container" v-for="(contact,index) in contacts">
+                                <div class="align-items-center avatar-image d-flex">
+                                    <img :src="getImgUrl(index)" class="w-100 round-image " alt="getName(index)">
                                 </div>
-                                <div class="col-9 preview d-flex justify-content-start flex-column">
-                                    <div>{{ getName(index) }}</div>
-                                    <div>Ultimo messaggio</div>
+                                <div class="preview-container">
+                                    <div class="row">
+                                        <div class="col preview d-flex justify-content-between ">
+                                            <div>{{ getName(index) }}</div>
+                                            <div class="last-message">12:00</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col preview justify-content-start ">
+                                            <div>Ultimo messaggio</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-1 preview d-flex justify-content-start flex-column">
-                                    <div class="last-message">12:00</div>
-                                </div>
-
                             </div>
 
 
@@ -85,7 +89,19 @@
 
 
                         </div>
-                        <div class="col-8 bg-secondary">ciao</div>
+                        <div class="col-8 bg-secondary">
+
+                            <div class="d-flex justify-content-between align-items-center h60px " id="user">
+                                <div id="main-user">
+                                    <img src="./img/avatar_1.jpg" alt="Sofia" id="main-avatar">
+                                </div>
+                                <span class="flex-grow-1">Sofia</span>
+                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-circle-notch"></i></div>
+                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-message"></i></div>
+                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

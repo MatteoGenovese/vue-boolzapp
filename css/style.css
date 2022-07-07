@@ -38,9 +38,12 @@ body {
     border-radius: 50%;
 }
 
-.sent-message-avatar {
+.avatar-image {
     height: 50px;
     width: 50px;
+}
+
+.round-image {
     border-radius: 50%;
 }
 
@@ -74,5 +77,28 @@ body {
 
 #left-container .last-message {
     font-size: 0.75rem;
-    padding: 0;
+}
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    width: 100%;
+}
+
+#main-user span {
+    margin-left: 12px;
+}
+
+.icon {
+    width: 30px;
+    font-size: 1.2rem;
+}
+
+.bg-color {
+    background-color: #EAEAEA;
+}
+
+.contact-container {
+    background-color: #FFFFFF;
 }
