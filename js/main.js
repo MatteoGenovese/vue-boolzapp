@@ -162,6 +162,10 @@ var app = new Vue({
 
     methods: {
 
+        getImgUrl: function(indexElement) {
+            return `./img/avatar${this.contacts[indexElement].avatar}.jpg`
+        }
+
 
     }
 });

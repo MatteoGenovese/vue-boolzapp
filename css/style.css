@@ -38,6 +38,12 @@ body {
     border-radius: 50%;
 }
 
+.sent-message-avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
 #main-user {
     height: 50px;
 }
@@ -58,9 +64,9 @@ body {
     background-color: #8EDAFC;
 }
 
-#app-notification i {
-    height: 40px;
-    width: 40px;
+#left-container .bell-container {
+    height: 50px;
+    width: 50px;
     color: #8EDAFC;
     background: #F2FBFF;
     border-radius: 50%;
