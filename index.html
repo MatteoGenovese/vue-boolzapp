@@ -56,25 +56,26 @@
 
                             <div class="row d-flex justify-content-between align-items-center h60px" id="search-box">
                                 <div class="col-12 px-2 input-group ">
-
-                                    <div class="input-group-text " id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></div>
-
-                                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-text " id="basic-addon2">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat" aria-describedby="basic-addon2">
                                 </div>
                             </div>
 
 
                             <div class="row d-flex justify-content-between h70px" v-for="(contact,index) in contacts">
-
                                 <div class="col-2 d-flex align-items-center">
-                                    <img :src="getImgUrl(index)" class="w-80 sent-message-avatar" alt="">
-
+                                    <img :src="getImgUrl(index)" class="w-80 sent-message-avatar" alt="getName(index)">
                                 </div>
-                                <div class="col-10 preview d-flex justify-content-start flex-column">
-                                    <div>Michele</div>
+                                <div class="col-9 preview d-flex justify-content-start flex-column">
+                                    <div>{{ getName(index) }}</div>
                                     <div>Ultimo messaggio</div>
-
                                 </div>
+                                <div class="col-1 preview d-flex justify-content-start flex-column">
+                                    <div class="last-message">12:00</div>
+                                </div>
+
                             </div>
 
 

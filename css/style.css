@@ -71,3 +71,8 @@ body {
     background: #F2FBFF;
     border-radius: 50%;
 }
+
+#left-container .last-message {
+    font-size: 0.75rem;
+    padding: 0;
+}
