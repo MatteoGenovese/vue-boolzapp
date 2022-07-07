@@ -54,11 +54,11 @@ body {
     height: 70px;
 }
 
-.app-notification {
+#app-notification {
     background-color: #8EDAFC;
 }
 
-.app-notification i {
+#app-notification i {
     height: 40px;
     width: 40px;
     color: #8EDAFC;
