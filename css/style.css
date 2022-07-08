@@ -8,6 +8,102 @@
     padding-left: 0;
 }
 
+#app {
+    height: 90vh;
+    width: 80vw;
+    min-width: 800px;
+    margin: 5vh auto;
+    display: flex;
+    background-color: #429488;
+}
+
+#user,
+#app-notification,
+#search-box,
+.contact,
+#chat-contact,
+#send-messages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding: 10px;
+}
+
+#left-container {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#right-container {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#contacts-container {
+    flex-grow: 1;
+}
+
+.centering-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centering-content>img {
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    width: 60%;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.icon {
+    width: 30px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#app-notification {
+    background-color: #8EDAFC;
+    height: 70px;
+    justify-content: flex-start;
+}
+
+#contacts-container {
+    background-color: #FFFFFF;
+}
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* modifiche ------------------------------------------------------------------ */
+
 .header-wrapper {
     position: absolute;
     top: 0;
@@ -70,10 +166,6 @@ body {
     height: 70px;
 }
 
-#app-notification {
-    background-color: #8EDAFC;
-}
-
 #left-container .bell-container {
     height: 50px;
     width: 50px;
@@ -98,11 +190,6 @@ body {
     margin-left: 12px;
 }
 
-.icon {
-    width: 30px;
-    font-size: 1.2rem;
-}
-
 .avatar-small {
     height: 40px;
     width: 40px;
@@ -121,17 +208,12 @@ body {
     background-color: #FFFFFF;
 }
 
-.contact-container {
-    background-color: #FFFFFF;
-}
-
 #search-image {
     height: calc(1.5em + 0.75rem + 2px);
 }
 
 #message-box {
     background-image: url("../img/mine.jpg");
-    height: 100%;
     width: 100%;
 }
 
@@ -153,11 +235,4 @@ body {
     left: 10%;
     padding: 10px 10px;
     margin-top: 20px;
-}
-
-#app {
-    height: 90vh;
-    width: 80vw;
-    min-width: 800px;
-    margin: auto;
 }

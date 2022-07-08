@@ -8,8 +8,7 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-    <!-- bootstrap.css-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
 
     <!-- style.css -->
     <link rel="stylesheet" href="./css/style.css">
@@ -19,132 +18,115 @@
 <body>
     <div id="app">
 
-        <div class="container">
-            <div class="row d-flex justify-content-between">
-                <div class="col-12 bg-color">
-                    <div class="row">
-                        <div class="col-4" id="left-container">
-                            <div class="d-flex justify-content-between align-items-center h60px" id="user">
-                                <img src="./img/avatar_1.jpg" alt="Sofia" class="avatar-small">
-                                <span class="flex-grow-1 mx-1">Sofia</span>
-                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-circle-notch"></i></div>
-                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-message"></i></div>
-                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-                            </div>
-
-
-                            <div class="row" id="app-notification">
-                                <div class="col-12 d-flex align-items-center h70px">
-                                    <div class="bell-container d-flex align-items-center justify-content-center">
-                                        <i class="fa-solid fa-bell-slash "></i>
-                                    </div>
-
-                                    <div class="d-flex justify-content-center flex-column mx-1">
-                                        <div>Ricevi notifiche di nuovi messaggi</div>
-                                        <a href="#">Attiva notifiche desktop</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row h60px" id="search-box">
-                                <div class="col-12 input-group d-flex align-items-center">
-                                    <div class="input-group-text " id="search-image">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat" aria-describedby="basic-addon2">
-                                </div>
-                            </div>
-
-
-                            <div class="row" v-for="(contact,index) in contacts">
-                                <div class="col-12">
-                                    <div class="d-flex justify-content-between h70px contact-container">
-                                        <div class="d-flex align-items-center avatar-medium">
-                                            <img :src="getImgUrl(index)" class="w-100 round-image" alt="getName(index)">
-                                        </div>
-                                        <div class="preview-container">
-                                            <div class="row">
-                                                <div class="col preview d-flex justify-content-between ">
-                                                    <div>{{ getName(index) }}</div>
-                                                    <div class="last-message">12:00</div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col preview justify-content-start ">
-                                                    <div>Ultimo messaggio</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
 
 
+        <div class="" id="left-container">
+
+            <div class="h60px" id="user">
+                <img src="./img/avatar_io.jpg" alt="Sofia" class="avatar-small">
+                <span class="flex-grow">Sofia</span>
+                <div class="icon"><i class="fa-solid fa-circle-notch"></i></div>
+                <div class="icon"><i class="fa-solid fa-message"></i></div>
+                <div class="icon"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </div>
 
 
+            <div class="" id="app-notification">
+                <div class="bell-container centering-content">
+                    <i class="fa-solid fa-bell-slash "></i>
+                </div>
+                <div class="">
+                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </div>
+
+            <div class="h60px" id="search-box">
+                <div class="input-group">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat" aria-describedby="basic-addon2">
+                </div>
+            </div>
+
+
+
+            <div id="contacts-container">
+                <div v-for="(contact,index) in contacts" class="contact">
+                    <div class="centering-content avatar-medium">
+                        <img :src="getImgUrl(index)" class="round-image" alt="getName(index)">
+                    </div>
+                    <div class="preview-container">
+                        <div class="inline">
+                            <div>{{ getName(index) }}</div>
+                            <div class="last-message">12:00</div>
                         </div>
-                        <div class="col-8 bg-secondary d-flex flex-column" id="right-container">
-
-                            <div class="d-flex justify-content-between align-items-center h60px " id="chat-contact">
-                                <div class="h50px">
-                                    <img src="./img/avatar_1.jpg" alt="Sofia" id="main-avatar">
-                                </div>
-                                <span class="flex-grow-1">Sofia</span>
-                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-circle-notch"></i></div>
-                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-message"></i></div>
-                                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-                            </div>
-
-                            <div class="row flex-grow-1">
-                                <div class="col" id="message-box">
-
-                                    <div class="row">
-                                        <div class="offset-7 col-4">
-                                            <div class="message-sent d-flex flex-column">
-                                                <div class="message">
-                                                    Hai portato a spasso il cane?
-                                                </div>
-                                                <div class="message-time align-self-end">
-                                                    15:00
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="offset-1 col-4">
-                                            <div class="message-received d-flex flex-column">
-                                                <div class="message">
-                                                    Hai portato a spasso il cane?
-                                                </div>
-                                                <div class="message-time align-self-end">
-                                                    15:00
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row h70px" id="send-messages">
-                                <div class="col-12 input-group d-flex align-items-center justify-content-between">
-
-                                    <div class="icon d-flex justify-content-center"><i class="fa-solid fa-face-smile "></i></div>
-                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Scrivi un messaggio" aria-describedby="basic-addon2">
-                                    <div class="icon d-flex justify-content-center"><i class="fa-solid fa-microphone "></i></div>
-
-                                </div>
-                            </div>
-
-
+                        <div>
+                            <div>Ultimo messaggio</div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+
+        <div id="right-container">
+            <div id="chat-contact">
+                <div class="h50px">
+                    <img src="./img/avatar_1.jpg" alt="Sofia" id="main-avatar">
+                </div>
+                <span class="flex-grow">Sofia</span>
+                <div class="icon"><i class="fa-solid fa-circle-notch"></i></div>
+                <div class="icon"><i class="fa-solid fa-message"></i></div>
+                <div class="icon"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </div>
+
+            <div class="flex-grow" id="message-box">
+                <div class="message-sent d-flex flex-column">
+                    <div class="message">
+                        Hai portato a spasso il cane?
+                    </div>
+                    <div class="message-time align-self-end">
+                        15:00
+                    </div>
+                </div>
+
+
+                <div class="message-received d-flex flex-column">
+                    <div class="message">
+                        Hai portato a spasso il cane?
+                    </div>
+                    <div class="message-time align-self-end">
+                        15:00
+                    </div>
+                </div>
+
+
+                <div class="message-sent d-flex flex-column">
+                    <div class="message">
+                        Hai portato a spasso il cane?
+                    </div>
+                    <div class="message-time align-self-end">
+                        15:00
+                    </div>
+                </div>
+            </div>
+
+            <div id="send-messages">
+                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-face-smile "></i></div>
+                <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Scrivi un messaggio" aria-describedby="basic-addon2">
+                <div class="icon d-flex justify-content-center"><i class="fa-solid fa-microphone "></i></div>
+            </div>
+
+
+        </div>
+
+
     </div>
+
+
 
 
 
