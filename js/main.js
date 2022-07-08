@@ -179,7 +179,15 @@ var app = new Vue({
                 status: 'sent',
             });
             this.message = "";
+            setTimeout(this.haveNewReply, 1000);
         },
+        haveNewReply: function() {
+            this.contacts[this.activeIndex].messages.push({
+                date: 'todayDate',
+                message: 'OK!!',
+                status: 'received',
+            });
+        }
 
 
 
