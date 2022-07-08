@@ -78,7 +78,7 @@ body {
     height: 50px;
     width: 50px;
     color: #8EDAFC;
-    background: #F2FBFF;
+    background: #FFFFFF;
     border-radius: 50%;
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 .bg-color {
-    background-color: #EAEAEA;
+    background-color: #FFFFFF;
 }
 
 .contact-container {
@@ -153,4 +153,11 @@ body {
     left: 10%;
     padding: 10px 10px;
     margin-top: 20px;
+}
+
+#app {
+    height: 90vh;
+    width: 80vw;
+    min-width: 800px;
+    margin: auto;
 }
