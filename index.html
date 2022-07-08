@@ -98,7 +98,9 @@
             </div>
             <div id="send-messages">
                 <div class="icon d-flex justify-content-center"><i class="fa-solid fa-face-smile "></i></div>
-                <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Scrivi un messaggio" aria-describedby="basic-addon2">
+
+                <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Scrivi un messaggio" v-model="message" @keyup.enter="sendNewMessage(message)">
+
                 <div class="icon d-flex justify-content-center"><i class="fa-solid fa-microphone "></i></div>
             </div>
         </div>
