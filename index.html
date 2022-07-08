@@ -45,7 +45,7 @@
             <div class="h60px" id="search-box">
                 <div class="input-group">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat">
                 </div>
             </div>
 
@@ -77,51 +77,36 @@
                 <div class="h50px">
                     <img src="./img/avatar_1.jpg" alt="Sofia" id="main-avatar">
                 </div>
-                <span class="flex-grow">Sofia</span>
+                <span class="flex-grow">{{contacts[activeIndex].name}}</span>
                 <div class="icon"><i class="fa-solid fa-circle-notch"></i></div>
                 <div class="icon"><i class="fa-solid fa-message"></i></div>
                 <div class="icon"><i class="fa-solid fa-ellipsis-vertical"></i></div>
             </div>
 
             <div class="flex-grow" id="message-box">
-                <div class="message-sent d-flex flex-column">
-                    <div class="message">
-                        Hai portato a spasso il cane?
-                    </div>
-                    <div class="message-time align-self-end">
-                        15:00
-                    </div>
-                </div>
-
-
-                <div class="message-received d-flex flex-column">
-                    <div class="message">
-                        Hai portato a spasso il cane?
-                    </div>
-                    <div class="message-time align-self-end">
-                        15:00
-                    </div>
-                </div>
-
-
-                <div class="message-sent d-flex flex-column">
-                    <div class="message">
-                        Hai portato a spasso il cane?
-                    </div>
-                    <div class="message-time align-self-end">
-                        15:00
+                <div id="message-container">
+                    <div v-for="message in contacts[activeIndex].messages" :class="{'message-sent' : message.status==='sent',
+                    'message-received' : message.status==='received'}">
+                        <div class="message">
+                            {{message.message}}
+                        </div>
+                        <div class="message-time align-self-end">
+                            {{message.date}}
+                        </div>
                     </div>
                 </div>
             </div>
-
             <div id="send-messages">
                 <div class="icon d-flex justify-content-center"><i class="fa-solid fa-face-smile "></i></div>
                 <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Scrivi un messaggio" aria-describedby="basic-addon2">
                 <div class="icon d-flex justify-content-center"><i class="fa-solid fa-microphone "></i></div>
             </div>
-
-
         </div>
+
+
+
+
+    </div>
 
 
     </div>
