@@ -1,7 +1,11 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .header-wrapper {
@@ -13,7 +17,9 @@
     z-index: 0;
 }
 
-#left-container #user {
+#user,
+#right-container,
+#chat-contact {
     background-color: #EAEAEA;
 }
 
@@ -35,12 +41,13 @@ body {
 #main-avatar {
     height: 40px;
     width: 40px;
+    min-width: 40px;
     border-radius: 50%;
 }
 
 .avatar-image {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 
 .round-image {
@@ -75,14 +82,15 @@ body {
     border-radius: 50%;
 }
 
-#left-container .last-message {
+#left-container .last-message,
+.message-time {
     font-size: 0.75rem;
 }
 
 .preview-container {
     display: flex;
     flex-direction: column;
-    margin-left: 12px;
+    padding-left: 12px;
     width: 100%;
 }
 
@@ -95,10 +103,52 @@ body {
     font-size: 1.2rem;
 }
 
+.avatar-small {
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+}
+
+.avatar-medium {
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+}
+
 .bg-color {
     background-color: #EAEAEA;
 }
 
 .contact-container {
     background-color: #FFFFFF;
+}
+
+#search-image {
+    height: calc(1.5em + 0.75rem + 2px);
+}
+
+#message-box {
+    background-image: url("../img/mine.jpg");
+    height: 100%;
+    width: 100%;
+}
+
+#send-messages {
+    background-color: #F3EEEA;
+}
+
+.message-sent {
+    background-color: #D5F9BA;
+    border-radius: 5px;
+    right: 10%;
+    padding: 10px 10px;
+}
+
+.message-received {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    left: 10%;
+    padding: 10px 10px;
 }
