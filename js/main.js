@@ -163,10 +163,14 @@ var app = new Vue({
     methods: {
 
         getImgUrl: function(indexElement) {
-            return `./img/avatar${this.contacts[indexElement].avatar}.jpg`
+            return `./img/avatar${this.contacts[indexElement].avatar}.jpg`;
         },
         getName: function(indexElement) {
-            return this.contacts[indexElement].name
+            return this.contacts[indexElement].name;
+        },
+        changeIndex: function(indexElement) {
+            this.activeIndex = indexElement;
+
         }
 
 
