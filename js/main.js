@@ -181,7 +181,7 @@ var app = new Vue({
         },
         sendNewMessage: function(newMessage) {
             this.contacts[this.activeIndex].messages.push({
-                date: 'todayDate',
+                date: moment().format("DD/MM/YYYY hh:mm:ss"),
                 message: newMessage,
                 status: 'sent',
             });
@@ -190,7 +190,7 @@ var app = new Vue({
         },
         haveNewReply: function() {
             this.contacts[this.activeIndex].messages.push({
-                date: 'todayDate',
+                date: moment().format("DD/MM/YYYY hh:mm:ss"),
                 message: 'OK!!',
                 status: 'received',
             });

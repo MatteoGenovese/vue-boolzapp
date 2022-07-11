@@ -65,10 +65,10 @@
                     <div class="preview-container">
                         <div class="inline">
                             <div>{{ getName(index) }}</div>
-                            <div class="last-message">12:00</div>
+                            <div class="last-message">{{ contact.messages[contact.messages.length-1].date }}</div>
                         </div>
                         <div>
-                            <div>Ultimo messaggio</div>
+                            <div>{{ contact.messages[contact.messages.length-1].message }}</div>
                         </div>
                     </div>
                 </div>
