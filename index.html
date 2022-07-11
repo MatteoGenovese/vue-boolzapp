@@ -48,15 +48,14 @@
             <div class="h60px" id="search-box">
                 <div class="input-group">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat" id="search-input" v-model="searchString" @keyup="getContacts(searchString)">
+                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat" id="search-input" v-model="searchString" @keyup="">
                 </div>
             </div>
 
 
 
             <div id="contacts-container">
-                <!-- v-if="searchString == ''" -->
-                <div v-for="(contact,index) in contacts" class="contact" @click="changeIndex(index)">
+                <div v-for="(contact,index) in contacts" class="contact" @click="changeIndex(index)" :class="{'d-none' : !includesLowerCase(getName(index), searchString)}">
                     <div class="centering-content avatar-medium">
                         <img :src="getImgUrl(index)" class="round-image" alt="getName(index)">
                     </div>
@@ -70,20 +69,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div v-else v-for="(contact,index) in filteredContacts" class="contact" @click="changeIndex(index)">
-                    <div class="centering-content avatar-medium">
-                        <img :src="getImgUrl(index)" class="round-image" alt="getName(index)">
-                    </div>
-                    <div class="preview-container">
-                        <div class="inline">
-                            <div>{{ getName(index) }}</div>
-                            <div class="last-message">12:00</div>
-                        </div>
-                        <div>
-                            <div>Ultimo messaggio</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
 

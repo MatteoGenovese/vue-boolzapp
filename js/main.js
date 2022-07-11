@@ -190,19 +190,15 @@ var app = new Vue({
                 status: 'received',
             });
         },
-        getContacts: function(newString) {
-            if (newString != "") {
-                const filteredContacts = this.contacts.filter((contact, index) => {
-                    if (contact.name.includes(newString)) {
-                        contact.index = index
-                        return true;
-                    } else
-                        return false;
-                });
-                console.log(filteredContacts);
-            }
+        includesLowerCase: function(inputString, stringToSearch) {
+            if (inputString.toLowerCase().includes(stringToSearch.toLowerCase()))
+                return true;
+            else
+                return false;
 
         }
+
+
 
 
 

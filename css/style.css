@@ -249,3 +249,7 @@ body {
 #send-messages {
     background-color: #F3EEEA;
 }
+
+.d-none {
+    display: none;
+}
