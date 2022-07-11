@@ -48,14 +48,17 @@
             <div class="h60px" id="search-box">
                 <div class="input-group">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat" id="search-input" v-model="searchString" @keyup="">
+                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat" id="search-input" v-model="searchString">
                 </div>
             </div>
 
 
 
             <div id="contacts-container">
-                <div v-for="(contact,index) in contacts" class="contact" @click="changeIndex(index)" :class="{'d-none' : !includesLowerCase(getName(index), searchString)}">
+                <div v-for="(contact,index) in contacts" class="contact" @click="changeIndex(index)" @mouseover="higlightContact(index)" :class="{
+                    'd-none' : !includesLowerCase(getName(index), searchString),
+                    'hover': highlightedIndex == index,
+                }">
                     <div class="centering-content avatar-medium">
                         <img :src="getImgUrl(index)" class="round-image" alt="getName(index)">
                     </div>
@@ -86,17 +89,21 @@
                 <div class="icon"><i class="fa-solid fa-ellipsis-vertical"></i></div>
             </div>
 
-            <div class="flex-grow" id="message-box">
+            <div class="flex-grow" id="message-box" @click="resetMenuMessage()">
                 <div id="message-container">
-                    <div v-for="message in contacts[activeIndex].messages" :class="{'message-sent' : message.status==='sent',
+
+                    <div v-for="(message, messageIndex) in contacts[activeIndex].messages" :class="{'message-sent' : message.status==='sent',
                     'message-received' : message.status==='received'}">
+
                         <div class="message inline">
                             <span>{{message.message}}</span>
-                            <a href="" @click.prevent="displayFunctionality=!displayFunctionality"><i class="fa-solid fa-chevron-down"></i></a>
+                            <a href="" @click.prevent="showMessageMenu(messageIndex)" @mouseleave="noMoreHover()">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
 
-                            <div class="box" :class="{
-                                'd-none' : displayFunctionality===false,
-                                '' : displayFunctionality===true
+                            <div class="" :class="{
+                                'd-none' : messageMenuIndex!=messageIndex,
+                                'box' : messageMenuIndex==messageIndex
                             }">
                                 <div>Message info</div>
                                 <div>Delete Message</div>

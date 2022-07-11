@@ -3,7 +3,12 @@ var app = new Vue({
 
     data: {
         activeIndex: 0,
+        highlightedIndex: 0,
+        messageMenuIndex: null,
+        hover: false,
         message: "",
+        searchString: "",
+        hover: false,
         displayFunctionality: false,
         contacts: [{
                 name: 'Michele',
@@ -172,6 +177,7 @@ var app = new Vue({
         },
         changeIndex: function(indexElement) {
             this.activeIndex = indexElement;
+            this.messageMenuIndex = null;
         },
         sendNewMessage: function(newMessage) {
             this.contacts[this.activeIndex].messages.push({
@@ -194,12 +200,27 @@ var app = new Vue({
                 return true;
             else
                 return false;
-
+        },
+        higlightContact: function(newIndex) {
+            this.highlightedIndex = newIndex;
+        },
+        showMessageMenu: function(newIndex) {
+            if (this.messageMenuIndex == newIndex) {
+                this.messageMenuIndex = null;
+                this.hover = false;
+            } else {
+                this.messageMenuIndex = newIndex;
+                this.hover = true;
+            }
+        },
+        resetMenuMessage: function() {
+            if (this.messageMenuIndex != null && this.hover == false)
+                this.messageMenuIndex = null;
+            console.log("sono sytatto qui")
+        },
+        noMoreHover: function() {
+            this.hover = false;
         }
-
-
-
-
 
     }
 });
