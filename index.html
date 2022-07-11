@@ -93,7 +93,8 @@
                 <div id="message-container">
 
                     <div v-for="(message, messageIndex) in contacts[activeIndex].messages" :class="{'message-sent' : message.status==='sent',
-                    'message-received' : message.status==='received'}">
+                    'message-received' : message.status==='received',
+                'd-none' : message.status==='deleted'}">
 
                         <div class="message inline">
                             <span>{{message.message}}</span>
@@ -106,7 +107,7 @@
                                 'box' : messageMenuIndex==messageIndex
                             }">
                                 <div>Message info</div>
-                                <div>Delete Message</div>
+                                <a href="#" @click="deleteMessage(messageMenuIndex)">Delete Message</a >
                             </div>
                         </div>
                         <div class="message-time align-self-end">

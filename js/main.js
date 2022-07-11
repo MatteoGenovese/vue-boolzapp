@@ -216,10 +216,12 @@ var app = new Vue({
         resetMenuMessage: function() {
             if (this.messageMenuIndex != null && this.hover == false)
                 this.messageMenuIndex = null;
-            console.log("sono sytatto qui")
         },
         noMoreHover: function() {
             this.hover = false;
+        },
+        deleteMessage: function(indexPassed) {
+            this.contacts[this.activeIndex].messages[indexPassed].status = "deleted"
         }
 
     }
