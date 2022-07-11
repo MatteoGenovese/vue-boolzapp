@@ -4,6 +4,8 @@ var app = new Vue({
     data: {
         activeIndex: 0,
         message: "",
+        searchString: "",
+        filteredContacts: [],
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -187,9 +189,28 @@ var app = new Vue({
                 message: 'OK!!',
                 status: 'received',
             });
+        },
+        getContacts: function(newString) {
+            if (newString != "") {
+                const filteredContacts = this.contacts.filter((contact, index) => {
+                    if (contact.name.includes(newString)) {
+                        contact.index = index
+                        return true;
+                    } else
+                        return false;
+                });
+                console.log(filteredContacts);
+            }
+
         }
 
 
 
     }
 });
+
+
+//                        date: '10/01/2020 15:30:55',
+//  (moment().format())
+
+console.log(moment().format());
