@@ -90,8 +90,17 @@
                 <div id="message-container">
                     <div v-for="message in contacts[activeIndex].messages" :class="{'message-sent' : message.status==='sent',
                     'message-received' : message.status==='received'}">
-                        <div class="message">
-                            {{message.message}}
+                        <div class="message inline">
+                            <span>{{message.message}}</span>
+                            <a href="" @click.prevent="displayFunctionality=!displayFunctionality"><i class="fa-solid fa-chevron-down"></i></a>
+
+                            <div class="box" :class="{
+                                'd-none' : displayFunctionality===false,
+                                '' : displayFunctionality===true
+                            }">
+                                <div>Message info</div>
+                                <div>Delete Message</div>
+                            </div>
                         </div>
                         <div class="message-time align-self-end">
                             {{message.date}}
@@ -99,6 +108,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div id="send-messages">
                 <div class="icon d-flex justify-content-center"><i class="fa-solid fa-face-smile "></i></div>
 

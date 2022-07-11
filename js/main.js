@@ -4,8 +4,7 @@ var app = new Vue({
     data: {
         activeIndex: 0,
         message: "",
-        searchString: "",
-        filteredContacts: [],
+        displayFunctionality: false,
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
