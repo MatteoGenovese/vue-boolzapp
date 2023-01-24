@@ -222,6 +222,18 @@ var app = new Vue({
         },
         deleteMessage: function(indexPassed) {
             this.contacts[this.activeIndex].messages[indexPassed].status = "deleted"
+        },
+        returnObject: function(indexPassed) {
+            lastIndex = this.contacts[indexPassed].messages.length - 1
+            if (this.contacts[indexPassed].messages.length > 0) {
+                return this.contacts[indexPassed].messages[lastIndex]
+            } else {
+                return {
+                    date: "",
+                    message: "Nessun nuovo messaggio",
+                    status: '',
+                }
+            }
         }
 
     }
